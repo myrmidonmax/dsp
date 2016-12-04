@@ -101,6 +101,12 @@ Here's an inline link to [Google](http://www.google.com/).
 
 ####python
 
+Block code
+
+```python
+print "hello dear world!"
+```
+
 Block code that is non-specific:  
 ```
 print "hello world!"
