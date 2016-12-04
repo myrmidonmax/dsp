@@ -179,7 +179,7 @@ What is the most installed language in the world?
 - Spark
 - Javascript
 
->>REPLACE THIS TEXT WITH YOUR RESPONSE
+** Python**
 
 -
 
@@ -192,7 +192,7 @@ What is the distribution of t-squared?
  * Beta
  * Bivariate Normal
 
->>REPLACE THIS TEXT WITH YOUR RESPONSE
+**Normal ?**
 
 ***
 
@@ -203,7 +203,7 @@ In the scikit-learn's official source repo, about how many issues are outstandin
 3. 700  
 4. 7000  
 
->>REPLACE THIS TEXT WITH YOUR RESPONSE
+**700**
 
 ---
 
