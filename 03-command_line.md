@@ -27,13 +27,13 @@ Make a cheat sheet for yourself: a list of at least **ten** commands and what th
 ###Q2.  List Files in Unix   
 
 What do the following commands do:  
-`ls` list content of current folder
-`ls -a` list content of current folder including hidden files
-`ls -l` list content of current folder in long format
-`ls -lh` list content of current folder in long and human readable format
-`ls -lah` combination of the three above
-`ls -t` list content of current folder sorted by modification time
-`ls -Glp` list content of current folder and inhibit display of group information, in long format, append indicator to entries
+`ls` list content of current folder  
+`ls -a` list content of current folder including hidden files  
+`ls -l` list content of current folder in long format  
+`ls -lh` list content of current folder in long and human readable format  
+`ls -lah` combination of the three above  
+`ls -t` list content of current folder sorted by modification time  
+`ls -Glp` list content of current folder and inhibit display of group information, in long format, append indicator to entries  
 
 ---
 
