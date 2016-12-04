@@ -48,7 +48,7 @@ cross-platform.
 
 Did you install Python 2 or 3? Why?  
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+Python 2 as it provides greater support for third-party modules. Also the issue of libraries seems to be in the favour of P2.
 
 ###Q2. Which Python Version Installed   
 
