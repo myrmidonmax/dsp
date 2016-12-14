@@ -54,7 +54,7 @@ Python 3 as it is new standard and I excpect there will be solutions found for t
 
 How can you check the version of Python installed if you happen to be on an unfamiliar computer?
 
-Open Terminal and enter 'python --version'
+Open Terminal and enter 'python --version'.
  
 
 
