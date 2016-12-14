@@ -48,14 +48,13 @@ cross-platform.
 
 Did you install Python 2 or 3? Why?  
 
-Python 2 as it provides greater support for third-party modules. Also the issue of libraries seems to be in the favour of P2.
+Python 3 as it is new standard and I excpect there will be solutions found for the compatibility with libraries.
 
 ###Q2. Which Python Version Installed   
 
 How can you check the version of Python installed if you happen to be on an unfamiliar computer?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
-
+Open Terminal and enter 'python --version'
  
 
 
