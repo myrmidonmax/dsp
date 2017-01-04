@@ -3,6 +3,16 @@
 
 
 def match_ends(words):
+
+    match_ends_count = 0
+
+    for i in words:
+        if len(i) >= 2:
+            if i[0] == i[-1]:
+                match_ends_count += 1
+    return match_ends_count
+
+
     """
     Given a list of strings, return the count of the number of strings
     where the string length is 2 or more and the first and last chars
@@ -14,12 +24,33 @@ def match_ends(words):
     2
     >>> match_ends(['aaa', 'be', 'abc', 'hello'])
     1
-    """
+    
     raise NotImplementedError
+    """
 
 
 def front_x(words):
-    """
+
+    list_x = []
+    list_non_x = []
+
+    for i in words:
+        if i[0] == "x":
+            list_x.append(i)
+        else:
+            list_non_x.append(i)
+
+    list_x.sort()
+    list_non_x.sort()
+
+    return list_x + list_non_x
+
+
+#print(front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa']))
+#print(front_x(['ccc', 'bbb', 'aaa', 'xcc', 'xaa']))
+#print(front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark']))
+
+"""
     Given a list of strings, return a list with the strings in sorted
     order, except group all the strings that begin with 'x' first.
     e.g. ['mix', 'xyz', 'apple', 'xanadu', 'aardvark'] yields
@@ -31,11 +62,9 @@ def front_x(words):
     ['xaa', 'xcc', 'aaa', 'bbb', 'ccc']
     >>> front_x(['mix', 'xyz', 'apple', 'xanadu', 'aardvark'])
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
-    """
-    raise NotImplementedError
+"""
 
-
-def sort_last(tuples):
+def sort_last(tuples): # Muss ich noch bearbeiten nach den Übungen zu Tuples
     """
     Given a list of non-empty tuples, return a list sorted in
     increasing order by the last element in each tuple.
@@ -49,40 +78,61 @@ def sort_last(tuples):
     >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
     [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
     """
-    raise NotImplementedError
 
 
 def remove_adjacent(nums):
-    """
-    Given a list of numbers, return a list where all adjacent equal
-    elements have been reduced to a single element, so [1, 2, 2, 3]
-    returns [1, 2, 3]. You may create a new list or modify the passed
-    in list.
+    if len(nums) == 0:
+        return []
+    else:
+        no_adjacent = [nums[0]]
 
-    >>> remove_adjacent([1, 2, 2, 3])
-    [1, 2, 3]
-    >>> remove_adjacent([2, 2, 3, 3, 3])
-    [2, 3]
-    >>> remove_adjacent([3, 2, 3, 3, 3])
-    [3, 2, 3]
-    >>> remove_adjacent([])
-    []
-    """
-    raise NotImplementedError
+        for i in range(1, len(nums)):
+            print(i)
+
+            if nums[i] != no_adjacent[-1]:
+                no_adjacent.append(nums[i])
+
+        return no_adjacent
 
 
-def linear_merge(list1, list2):
-    """
-    Given two lists sorted in increasing order, create and return a
-    merged list of all the elements in sorted order. You may modify
-    the passed in lists. Ideally, the solution should work in "linear"
-    time, making a single pass of both lists.
 
-    >>> linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc'])
-    ['aa', 'bb', 'cc', 'xx', 'zz']
-    >>> linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz'])
-    ['aa', 'bb', 'cc', 'xx', 'zz']
-    >>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
-    ['aa', 'aa', 'aa', 'bb', 'bb']
-    """
-    raise NotImplementedError
+"""
+Given a list of numbers, return a list where all adjacent equal
+elements have been reduced to a single element, so [1, 2, 2, 3]
+returns [1, 2, 3]. You may create a new list or modify the passed
+in list.
+
+>>> remove_adjacent([1, 2, 2, 3])
+[1, 2, 3]
+>>> remove_adjacent([2, 2, 3, 3, 3])
+[2, 3]
+>>> remove_adjacent([3, 2, 3, 3, 3])
+[3, 2, 3]
+>>> remove_adjacent([])
+[]
+"""
+
+
+def linear_merge(list1, list2): # not sure what "linear" time means
+
+    list1 = list1 + list2
+    return sorted(list1)
+
+print(linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc']))
+print(linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz']))
+print(linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb']))
+
+
+"""
+Given two lists sorted in increasing order, create and return a
+merged list of all the elements in sorted order. You may modify
+the passed in lists. Ideally, the solution should work in "linear"
+time, making a single pass of both lists.
+
+>>> linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc'])
+['aa', 'bb', 'cc', 'xx', 'zz']
+>>> linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz'])
+['aa', 'bb', 'cc', 'xx', 'zz']
+>>> linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb'])
+['aa', 'aa', 'aa', 'bb', 'bb']
+"""

@@ -3,25 +3,43 @@
 
 
 def donuts(count):
-    """
-    Given an int count of a number of donuts, return a string of the
-    form 'Number of donuts: <count>', where <count> is the number
-    passed in. However, if the count is 10 or more, then use the word
-    'many' instead of the actual count.
+    count_str = str(count)
 
-    >>> donuts(4)
-    'Number of donuts: 4'
-    >>> donuts(9)
-    'Number of donuts: 9'
-    >>> donuts(10)
-    'Number of donuts: many'
-    >>> donuts(99)
-    'Number of donuts: many'
-    """
+    string_1 = 'Number of donuts: many'
+    string_2 = 'Number of donuts: ' + count_str
+    
+    if count > 9:
+        return string_1
+    else:
+        return string_2
     raise NotImplementedError
 
 
+"""
+Given an int count of a number of donuts, return a string of the
+form 'Number of donuts: <count>', where <count> is the number
+passed in. However, if the count is 10 or more, then use the word
+'many' instead of the actual count.
+
+>>> donuts(4)
+'Number of donuts: 4'
+>>> donuts(9)
+'Number of donuts: 9'
+>>> donuts(10)
+'Number of donuts: many'
+>>> donuts(99)
+'Number of donuts: many'
+"""
+
 def both_ends(s):
+    if len(s) < 2:
+        return ''
+    else:
+        s_2 = s[0:2] + s[-2:len(s)]
+        return s_2
+    raise NotImplementedError
+
+
     """
     Given a string s, return a string made of the first 2 and the last
     2 chars of the original string, so 'spring' yields 'spng'.
@@ -37,29 +55,34 @@ def both_ends(s):
     >>> both_ends('xyz')
     'xyyz'
     """
-    raise NotImplementedError
+
 
 
 def fix_start(s):
-    """
-    Given a string s, return a string where all occurences of its
-    first char have been changed to '*', except do not change the
-    first char itself. e.g. 'babble' yields 'ba**le' Assume that the
-    string is length 1 or more.
 
-    >>> fix_start('babble')
-    'ba**le'
-    >>> fix_start('aardvark')
-    'a*rdv*rk'
-    >>> fix_start('google')
-    'goo*le'
-    >>> fix_start('donut')
-    'donut'
-    """
-    raise NotImplementedError
+    s_tail = s[1:]
+    initial = s[0]
+    word = ''
+
+    for letter in s_tail:
+        if letter == initial:
+            word = word + '*'
+        else:
+            word = word + letter
+    s_2 = s[0] + word
+
+    print(s_2)
 
 
 def mix_up(a, b):
+    string_1 = a[0:2]
+    string_2 = a[2:]
+    string_3 = b[0:2]
+    string_4 = b[2:]
+
+    string_concat = string_3 + string_2 + ' ' + string_1 + string_4
+    return string_concat
+
     """
     Given strings a and b, return a single string with a and b
     separated by a space '<a> <b>', except swap the first 2 chars of
@@ -78,6 +101,15 @@ def mix_up(a, b):
 
 
 def verbing(s):
+    if len(s) < 3:
+        return s
+    else:
+        if s[-3:] == 'ing':
+            s_new = s + 'ly'
+        else:
+            s_new = s + 'ing'
+        return s_new
+
     """
     Given a string, if its length is at least 3, add 'ing' to its end.
     Unless it already ends in 'ing', in which case add 'ly' instead.
@@ -95,6 +127,17 @@ def verbing(s):
 
 
 def not_bad(s):
+
+    not_loc = s.find('not')
+    bad_loc = s.find('bad')
+
+    if bad_loc > not_loc:
+        s_new = s[:not_loc] + "good" + s[bad_loc + 3:]
+        return s_new
+    else:
+        return s
+
+
     """
     Given a string, find the first appearance of the substring 'not'
     and 'bad'. If the 'bad' follows the 'not', replace the whole
@@ -115,6 +158,25 @@ def not_bad(s):
 
 
 def front_back(a, b):
+
+    if len(a) % 2 == 0:
+        a_front = a[:int(len(a) / 2)]
+        a_back = a[int(len(a) / 2):]
+    else:
+        a_front = a[:int(len(a) / 2 + 0.5)]
+        a_back = a[int(len(a) / 2 + 0.5):]
+
+    if len(b) % 2 == 0:
+        b_front = b[:int(len(b) / 2)]
+        b_back = b[int(len(b) / 2):]
+    else:
+        b_front = b[:int(len(b) / 2 + 0.5)]
+        b_back = b[int(len(b) / 2 + 0.5):]
+
+    string_combi = a_front + b_front + a_back + b_back
+
+    return string_combi
+
     """
     Consider dividing a string into two halves. If the length is even,
     the front and back halves are the same length. If the length is
