@@ -64,20 +64,23 @@ def front_x(words):
     ['xanadu', 'xyz', 'aardvark', 'apple', 'mix']
 """
 
-def sort_last(tuples): # Muss ich noch bearbeiten nach den Übungen zu Tuples
-    """
-    Given a list of non-empty tuples, return a list sorted in
-    increasing order by the last element in each tuple.
-    e.g. [(1, 7), (1, 3), (3, 4, 5), (2, 2)] yields
-         [(2, 2), (1, 3), (3, 4, 5), (1, 7)].
+def sort_last(tuples):
+    print(sorted(tuples, key= lambda last_el:last_el[-1]))
 
-    >>> sort_last([(1, 3), (3, 2), (2, 1)])
-    [(2, 1), (3, 2), (1, 3)]
-    >>> sort_last([(2, 3), (1, 2), (3, 1)])
-    [(3, 1), (1, 2), (2, 3)]
-    >>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
-    [(2, 2), (1, 3), (3, 4, 5), (1, 7)]
-    """
+
+"""
+Given a list of non-empty tuples, return a list sorted in
+increasing order by the last element in each tuple.
+e.g. [(1, 7), (1, 3), (3, 4, 5), (2, 2)] yields
+     [(2, 2), (1, 3), (3, 4, 5), (1, 7)].
+
+>>> sort_last([(1, 3), (3, 2), (2, 1)])
+[(2, 1), (3, 2), (1, 3)]
+>>> sort_last([(2, 3), (1, 2), (3, 1)])
+[(3, 1), (1, 2), (2, 3)]
+>>> sort_last([(1, 7), (1, 3), (3, 4, 5), (2, 2)])
+[(2, 2), (1, 3), (3, 4, 5), (1, 7)]
+"""
 
 
 def remove_adjacent(nums):
@@ -118,12 +121,13 @@ def linear_merge(list1, list2): # not sure what "linear" time means
     list1 = list1 + list2
     return sorted(list1)
 
+
+"""
 print(linear_merge(['aa', 'xx', 'zz'], ['bb', 'cc']))
 print(linear_merge(['aa', 'xx'], ['bb', 'cc', 'zz']))
 print(linear_merge(['aa', 'aa'], ['aa', 'bb', 'bb']))
 
 
-"""
 Given two lists sorted in increasing order, create and return a
 merged list of all the elements in sorted order. You may modify
 the passed in lists. Ideally, the solution should work in "linear"
