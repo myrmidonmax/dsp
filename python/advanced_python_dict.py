@@ -3,9 +3,10 @@
 # Part III - Q6
 
 def quest_6():
-	import csv, string, operator
+	import csv, string, operator, itertools
 	with open("faculty.csv", "r") as fac:
 		faculty_dict = {}
+		faculty_list = []
 
 		fac_reader = csv.DictReader(fac)
 		for row in fac_reader:
@@ -18,9 +19,11 @@ def quest_6():
 			faculty_dict.setdefault(surname, []).append(memberdetails)
 
 		for i in faculty_dict:
-			print(i, faculty_dict[i])
+			faculty_list.append((i, faculty_dict[i]))
 
-		#print("There are %d different titles. The frequencies are:\n" % len(titles_count), sorted(titles_count.items(), key = operator.itemgetter(1), reverse=True) )
+		for i in range(3):
+			print(faculty_list[i])
+
 
 
 # Part III - Q7
@@ -67,4 +70,4 @@ def quest_8():
 		for i in sorted(professor_dict):
 			print(i, professor_dict[i])
 
-quest_7()
+quest_6()
